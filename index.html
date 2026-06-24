@@ -25,9 +25,20 @@
       border-bottom: 1px solid #1e3050;
     }
     p, li { color: #c5d0e0; margin-bottom: .6rem; }
-    ul { padding-left: 1.4rem; }
+    ul { padding-left: 1.4rem; margin-bottom: .6rem; }
     a { color: #e94560; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .nav-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: .55rem 1.2rem;
+      background: #e94560;
+      color: #fff;
+      border-radius: 8px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .nav-link:hover { text-decoration: none; background: #c73550; }
     footer {
       text-align: center;
       margin-top: 3rem;
@@ -43,117 +54,157 @@
 
   <header>
     <h1>Política de Privacidade</h1>
-    <p>StudyGate &mdash; Última atualização: 14 de maio de 2025</p>
+    <p>StudyGate &mdash; Última atualização: 24 de junho de 2026</p>
   </header>
 
   <p>
-    Esta Política de Privacidade descreve como o aplicativo <strong>StudyGate</strong>
-    coleta, usa e protege suas informações. Ao utilizar o aplicativo, você concorda
-    com as práticas descritas neste documento.
+    Esta Política de Privacidade descreve como o aplicativo <strong>StudyGate</strong>,
+    desenvolvido por <strong>Luiz Gustavo Domingues Lacerda</strong>, coleta, usa e protege
+    suas informações. Ao utilizar o aplicativo, você concorda com as práticas descritas neste documento.
   </p>
 
   <h2>1. Informações que coletamos</h2>
   <ul>
-    <li><strong>Conta:</strong> endereço de e-mail e nome de exibição, fornecidos pelo Google Sign-In ou criados anonimamente.</li>
-    <li><strong>Perfil de estudo:</strong> curso, período, áreas de estudo e modo de intensidade que você configura dentro do app.</li>
-    <li><strong>Progresso:</strong> histórico de questões respondidas, pontuação XP, sequências de estudo e datas de revisão (armazenados localmente no dispositivo via Hive).</li>
-    <li><strong>Aplicativos bloqueados:</strong> lista de pacotes que você escolhe bloquear. Esta informação permanece <em>somente no dispositivo</em> e nunca é enviada a servidores externos.</li>
-    <li><strong>Relatórios de falhas:</strong> em caso de erro, dados técnicos anônimos (stack trace, versão do SO) podem ser enviados ao Firebase Crashlytics.</li>
+    <li>
+      <strong>Dados de conta:</strong> endereço de e-mail, nome de exibição e identificador único
+      de usuário (UID), fornecidos pelo Google Sign-In ou gerados anonimamente pelo Firebase Authentication.
+    </li>
+    <li>
+      <strong>Perfil de estudo:</strong> curso, semestre, áreas de estudo, modo de intensidade e
+      configurações de dificuldade que você define no app.
+    </li>
+    <li>
+      <strong>Progresso e histórico:</strong> questões respondidas, pontuação XP, sequências de
+      estudo (streaks) e datas de revisão agendadas pelo sistema de repetição espaçada (SRS).
+      Esses dados são armazenados localmente no dispositivo via Hive.
+    </li>
+    <li>
+      <strong>Dados de assinatura e compras:</strong> histórico de transações e status do plano
+      (Free, Trial, Essencial ou Pro), processados pelo RevenueCat. Não armazenamos dados de
+      cartão de crédito; esses dados são gerenciados exclusivamente pela Apple App Store / Google Play.
+    </li>
+    <li>
+      <strong>Dados de desempenho e falhas:</strong> em caso de erro ou instabilidade, dados
+      técnicos anônimos (stack trace, versão do app, versão do SO, modelo do dispositivo) são
+      enviados ao Firebase Crashlytics para diagnóstico.
+    </li>
+    <li>
+      <strong>Dados de verificação de integridade:</strong> o Firebase App Check valida que o
+      tráfego origina-se de instâncias legítimas do app (sem coleta de dados pessoais adicionais).
+    </li>
+    <li>
+      <strong>Interações com o produto:</strong> padrões de uso agregados e anônimos para melhoria
+      contínua do app.
+    </li>
+    <li>
+      <strong>Aplicativos bloqueados:</strong> a lista de apps que você escolhe bloquear é armazenada
+      <em>exclusivamente no dispositivo</em> e nunca é transmitida a servidores externos.
+    </li>
   </ul>
 
   <h2>2. Como usamos suas informações</h2>
   <ul>
-    <li>Gerar questões de estudo personalizadas por meio de modelos de inteligência artificial (Claude, Gemini, GPT).</li>
-    <li>Calcular o agendamento de revisão espaçada (SRS) para maximizar sua retenção.</li>
-    <li>Identificar e corrigir falhas técnicas no aplicativo.</li>
+    <li>Gerar questões de estudo personalizadas por meio de modelos de inteligência artificial.</li>
+    <li>Calcular o agendamento de revisão espaçada (SRS) para maximizar sua retenção de conteúdo.</li>
+    <li>Gerenciar o status da sua assinatura e aplicar os limites de uso de cada plano.</li>
+    <li>Identificar, diagnosticar e corrigir falhas técnicas no aplicativo.</li>
+    <li>Enviar notificações locais de revisão diária (somente no dispositivo, sem servidores de push).</li>
     <li>Melhorar a experiência de uso com base em dados agregados e anônimos.</li>
   </ul>
 
-  <h2>3. Compartilhamento de dados</h2>
-  <p>Não vendemos, alugamos nem compartilhamos seus dados pessoais com terceiros para fins comerciais. Os únicos terceiros que processam dados são:</p>
+  <h2>3. Terceiros que processam seus dados</h2>
+  <p>Não vendemos, alugamos nem compartilhamos seus dados pessoais com terceiros para fins comerciais. Os serviços de terceiros utilizados são:</p>
   <ul>
-    <li><strong>Google Firebase</strong> (autenticação e relatórios de falhas) — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política do Firebase</a></li>
-    <li><strong>Google Sign-In</strong> — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política do Google</a></li>
-    <li><strong>Anthropic / Claude API</strong> (geração de questões) — o contexto de estudo é enviado para gerar questões; nenhum dado pessoal identificável é incluído nos prompts.</li>
+    <li>
+      <strong>Google Firebase</strong> (autenticação, relatórios de falhas, verificação de integridade) —
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Política do Firebase</a>
+    </li>
+    <li>
+      <strong>Google Sign-In</strong> (login com conta Google) —
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política do Google</a>
+    </li>
+    <li>
+      <strong>RevenueCat</strong> (gerenciamento de assinaturas e compras in-app) —
+      <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Política do RevenueCat</a>
+    </li>
+    <li>
+      <strong>Anthropic / Claude API</strong> (geração de questões via IA) — o contexto de estudo
+      é enviado para gerar questões; nenhum dado pessoal identificável é incluído nos prompts.
+    </li>
+    <li>
+      <strong>Google / Gemini API</strong> (geração de questões via IA, planos Free e Trial) —
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política do Google</a>
+    </li>
+    <li>
+      <strong>OpenAI / GPT API</strong> (geração de questões via IA, como fallback) —
+      <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">Política da OpenAI</a>
+    </li>
   </ul>
 
   <h2>4. Armazenamento e segurança</h2>
   <p>
     A maior parte dos dados (histórico de questões, configurações, progresso) é armazenada
-    <strong>localmente no seu dispositivo</strong> usando o banco de dados Hive e o
-    Flutter Secure Storage. Dados de autenticação são gerenciados pelo Firebase Authentication.
-    Adotamos medidas técnicas razoáveis para proteger suas informações contra acesso não autorizado.
+    <strong>localmente no seu dispositivo</strong> com criptografia AES-256 via Hive.
+    Dados de autenticação são gerenciados pelo Firebase Authentication com transmissão
+    protegida por TLS. Adotamos medidas técnicas razoáveis para proteger suas informações
+    contra acesso não autorizado.
   </p>
 
   <h2>5. Retenção de dados</h2>
   <p>
-    Os dados locais permanecem no dispositivo até que você desinstale o aplicativo ou limpe
-    seus dados nas configurações do Android. Dados de autenticação no Firebase podem ser
-    excluídos a qualquer momento pelo suporte.
+    Os dados locais permanecem no dispositivo até que você desinstale o aplicativo ou
+    exclua sua conta. Dados de autenticação e assinatura no Firebase e RevenueCat são
+    excluídos mediante solicitação formal (ver seção 8).
   </p>
 
   <h2>6. Privacidade de menores</h2>
   <p>
-    O StudyGate é destinado a estudantes do ensino superior e não é direcionado a crianças
-    menores de 13 anos. Não coletamos intencionalmente informações de menores. Se você
-    acredita que uma criança forneceu dados pessoais, entre em contato conosco para remoção.
+    O StudyGate é destinado a estudantes do ensino superior (maiores de 13 anos).
+    Não coletamos intencionalmente informações de crianças menores de 13 anos. Se você
+    acredita que uma criança forneceu dados pessoais, entre em contato conosco para remoção imediata.
   </p>
 
   <h2>7. Seus direitos</h2>
   <ul>
     <li>Acessar, corrigir ou excluir seus dados pessoais.</li>
     <li>Revogar o acesso do Google Sign-In a qualquer momento nas configurações da conta Google.</li>
-    <li>Solicitar a exclusão da sua conta e dos dados associados.</li>
+    <li>Solicitar a portabilidade dos seus dados.</li>
+    <li>Cancelar sua assinatura a qualquer momento (ver Termos de Uso para instruções).</li>
+    <li>Solicitar a exclusão completa da sua conta e de todos os dados associados.</li>
   </ul>
 
-  <h2>8. Alterações nesta política</h2>
+  <h2>8. Exclusão de dados</h2>
+  <p>Você pode solicitar a exclusão completa dos seus dados pessoais de duas formas:</p>
+  <ul>
+    <li>
+      <strong>Pelo aplicativo:</strong> acesse <strong>Perfil → Deletar minha conta</strong>.
+      A exclusão remove imediatamente sua conta e todos os dados associados nos nossos servidores.
+    </li>
+    <li>
+      <strong>Por e-mail:</strong> envie uma solicitação para
+      <a href="mailto:lacerdadomingues1@gmail.com">lacerdadomingues1@gmail.com</a>
+      com o assunto "Exclusão de dados". Atenderemos seu pedido em até 30 dias.
+    </li>
+  </ul>
+
+  <h2>9. Alterações nesta política</h2>
   <p>
     Podemos atualizar esta Política de Privacidade periodicamente. A data de revisão no
     topo da página será atualizada a cada alteração. O uso continuado do aplicativo após
     alterações constitui aceitação da política revisada.
   </p>
 
-  <h2>9. Contato</h2>
+  <h2>10. Contato</h2>
   <p>
-    Dúvidas ou solicitações relacionadas à privacidade:
+    Dúvidas ou solicitações relacionadas à privacidade:<br />
+    <strong>Luiz Gustavo Domingues Lacerda</strong><br />
     <a href="mailto:lacerdadomingues1@gmail.com">lacerdadomingues1@gmail.com</a>
   </p>
 
-  <h2>10. Exclusão de dados</h2>
-  <p>
-    Você pode solicitar a exclusão completa dos seus dados pessoais de duas formas:
-  </p>
-  <ul>
-    <li>
-      <strong>Por e-mail:</strong> envie uma solicitação para
-      <a href="mailto:lacerdadomingues1@gmail.com">lacerdadomingues1@gmail.com</a>
-      com o assunto "Exclusão de dados". Atenderemos seu pedido em até 30 dias.
-    </li>
-    <li>
-      <strong>Pelo aplicativo:</strong> acesse <strong>Perfil → Deletar minha conta</strong>.
-      A exclusão remove imediatamente sua conta e todos os dados associados.
-    </li>
-  </ul>
-
-  <h2>11. Termos de Uso</h2>
-  <p>
-    Ao instalar e usar o aplicativo <strong>StudyGate</strong>, você concorda com os seguintes termos:
-  </p>
-  <ul>
-    <li><strong>Licença de uso:</strong> concedemos a você uma licença pessoal, não exclusiva e intransferível para usar o aplicativo exclusivamente para fins de estudo.</li>
-    <li><strong>Uso aceitável:</strong> é proibido usar o app para fins ilegais, reverter a engenharia do código, ou tentar contornar mecanismos de segurança ou limitações de uso.</li>
-    <li><strong>Assinaturas:</strong> planos pagos são cobrados de forma recorrente via Google Play. O cancelamento deve ser feito nas configurações de assinatura da loja. Não há reembolso por períodos já faturados, salvo exigência legal.</li>
-    <li><strong>Disponibilidade:</strong> o serviço é fornecido "como está". Não garantimos disponibilidade ininterrupta nem exatidão absoluta das questões geradas por IA.</li>
-    <li><strong>Propriedade intelectual:</strong> todo o conteúdo do aplicativo (exceto questões geradas pelo usuário) é de propriedade do StudyGate ou de seus licenciadores.</li>
-    <li><strong>Limitação de responsabilidade:</strong> o StudyGate não é responsável por decisões tomadas com base no conteúdo gerado, nem por perda de progresso decorrente de desinstalação ou falha de dispositivo.</li>
-    <li><strong>Alterações:</strong> reservamo-nos o direito de modificar estes termos. O uso contínuo após alterações constitui aceitação das novas condições.</li>
-  </ul>
-  <p>
-    Dúvidas sobre estes termos: <a href="mailto:lacerdadomingues1@gmail.com">lacerdadomingues1@gmail.com</a>
-  </p>
+  <a href="terms.html" class="nav-link">Ver Termos de Uso →</a>
 
   <footer>
-    &copy; 2025 StudyGate. Todos os direitos reservados.
+    &copy; 2026 StudyGate. Todos os direitos reservados.
   </footer>
 
 </div>
