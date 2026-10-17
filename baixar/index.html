@@ -76,6 +76,13 @@
       el.classList.add('main');
       el.parentNode.insertBefore(el, el.parentNode.firstChild);
     }
+    // No Android, o navegador interno do Instagram/Facebook não abre o app do Play Store a partir
+    // do link https. O intent:// pede ao sistema para abrir o Play Store e cai no link web se falhar.
+    if (mine === 'android') {
+      var web = 'https://play.google.com/store/apps/details?id=com.studygate.studygate';
+      document.getElementById('android').href = 'intent://details?id=com.studygate.studygate#Intent;scheme=market;'
+        + 'package=com.android.vending;S.browser_fallback_url=' + encodeURIComponent(web) + ';end';
+    }
   </script>
 </body>
 </html>
