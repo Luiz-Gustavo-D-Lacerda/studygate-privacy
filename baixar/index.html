@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baixe o StudyGate</title>
+  <meta name="description" content="StudyGate: suas redes sociais só abrem depois de estudar. Bloqueie apps e responda flashcards do seu curso, gerados por IA. Grátis para Android e iPhone." />
+  <meta property="og:title" content="StudyGate — Estude e desbloqueie seus apps" />
+  <meta property="og:description" content="Suas redes só abrem depois de estudar. Grátis para Android e iPhone." />
+  <meta property="og:image" content="https://luiz-gustavo-d-lacerda.github.io/studygate-privacy/baixar/icon.png" />
+  <link rel="icon" href="icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(900px 700px at 50% 0%, #2a2350 0%, #1A1A2E 60%, #12121f 100%);
+      background-color: #1A1A2E;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+      text-align: center;
+    }
+    main { width: 100%; max-width: 420px; }
+    img.logo { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+    h1 { margin-top: 24px; font-size: 2.4rem; font-weight: 900; letter-spacing: -1px; }
+    .tagline { margin-top: 8px; font-size: 1.15rem; color: rgba(255,255,255,.75); }
+    ul { list-style: none; margin: 28px 0 32px; text-align: left; display: grid; gap: 12px; }
+    li { padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1); font-size: .98rem; line-height: 1.45; }
+    .stores { display: grid; gap: 12px; }
+    .store { display: block; padding: 16px; border-radius: 16px; background: #000; color: #fff; text-decoration: none;
+      border: 2px solid rgba(255,255,255,.3); }
+    .store small { display: block; font-size: .8rem; color: rgba(255,255,255,.7); }
+    .store b { font-size: 1.35rem; }
+    .store.main { background: #E94560; border-color: #E94560; }
+    .store.main small { color: rgba(255,255,255,.9); }
+    .free { margin-top: 16px; font-size: .9rem; color: rgba(255,255,255,.6); }
+    footer { margin-top: 36px; font-size: .8rem; }
+    footer a { color: rgba(255,255,255,.5); }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="icon.png" alt="Ícone do StudyGate" />
+    <h1>StudyGate</h1>
+    <p class="tagline">Suas redes só abrem depois de estudar 📚🔒</p>
+
+    <ul>
+      <li>🔒 Você escolhe quais apps bloquear: Instagram, TikTok, YouTube, jogos…</li>
+      <li>🧠 Para liberar, responde flashcards do seu curso, gerados por IA</li>
+      <li>✅ Acertou? O app fica liberado por alguns minutos</li>
+      <li>🎓 24 cursos: Medicina, Direito, OAB, ENEM, Concursos e muito mais</li>
+    </ul>
+
+    <div class="stores">
+      <a class="store" id="android" href="https://play.google.com/store/apps/details?id=com.studygate.studygate">
+        <small>Disponível no</small><b>Google Play</b>
+      </a>
+      <a class="store" id="ios" href="https://apps.apple.com/br/app/studygate/id6774297588">
+        <small>Disponível na</small><b>App Store</b>
+      </a>
+    </div>
+    <p class="free">Grátis para baixar · 7 dias com tudo liberado</p>
+
+    <footer><a href="../">Política de Privacidade</a> · <a href="../terms.html">Termos de Uso</a></footer>
+  </main>
+  <script>
+    // Destaca (e coloca em primeiro) a loja do aparelho de quem abriu a página
+    var ua = navigator.userAgent || '';
+    var mine = /iPhone|iPad|iPod|Macintosh/.test(ua) ? 'ios' : (/Android/.test(ua) ? 'android' : null);
+    if (mine) {
+      var el = document.getElementById(mine);
+      el.classList.add('main');
+      el.parentNode.insertBefore(el, el.parentNode.firstChild);
+    }
+  </script>
+</body>
+</html>
